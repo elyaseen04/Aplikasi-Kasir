@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Kasir & Rekap Laba</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="navbar">
+            <h1>Data Kasir</h1>
+            <nav>
+                <a href="index.html">Kasir</a>
+                <a href="data_kasir.html" class="active">Data Kasir & Laba</a>
+            </nav>
+        </header>
+
+        <main class="main-content full-width">
+            <!-- Ringkasan Keuangan -->
+            <section class="stats-container">
+                <div class="stat-card">
+                    <h3>Total Penjualan</h3>
+                    <p id="totalRevenue">Rp 0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Estimasi Laba</h3>
+                    <p id="totalProfit" class="profit-text">Rp 0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Transaksi</h3>
+                    <p id="totalTransactions">0</p>
+                </div>
+            </section>
+
+            <!-- Tabel Riwayat Transaksi -->
+            <section class="history-section">
+                <div class="section-header">
+                    <h2>Riwayat Transaksi</h2>
+                    <button class="btn-clear" onclick="clearHistory()">Hapus Semua Rekap</button>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Waktu</th>
+                                <th>Detail Item</th>
+                                <th>Total Bayar</th>
+                                <th>Laba Bersih</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyTableBody">
+                            <!-- Data transaksi akan dimuat di sini -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        renderHistory();
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Kasir Modern</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header & Navigasi -->
+        <header class="navbar">
+            <h1>POS Kasir</h1>
+            <nav>
+                <a href="index.html" class="active">Kasir</a>
+                <a href="data_kasir.html">Data Kasir & Laba</a>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <!-- Area Katalog Produk (Kiri) -->
+            <section class="products-section">
+                <h2>Katalog Produk</h2>
+                <div class="product-grid" id="productGrid">
+                    <!-- Produk dipanggil lewat JavaScript -->
+                </div>
+            </section>
+
+            <!-- Area Keranjang & Kalkulator Pembayaran (Kanan) -->
+            <section class="cart-section">
+                <h2>Rincian Transaksi</h2>
+                <div class="cart-items" id="cartItems">
+                    <p class="empty-msg">Belum ada produk dipilih</p>
+                </div>
+
+                <div class="checkout-box">
+                    <div class="summary-row">
+                        <span>Total Belanja:</span>
+                        <strong id="totalPrice">Rp 0</strong>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="cashInput">Uang Pembeli (Rp):</label>
+                        <input type="number" id="cashInput" placeholder="Masukkan jumlah uang" oninput="calculateChange()">
+                    </div>
+
+                    <div class="summary-row change-row">
+                        <span>Kembalian:</span>
+                        <strong id="changeAmount">Rp 0</strong>
+                    </div>
+
+                    <button class="btn-pay" onclick="processPayment()">Selesaikan Transaksi</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        renderProducts();
+        renderCart();
+    </script>
+</body>
+</html>
